@@ -1,0 +1,49 @@
+body{
+	background: #feffe8; /* Old browsers */
+	background: -moz-linear-gradient(top, #feffe8 11%, #feffe8 26%, #feffe8 26%, #d6dbbf 79%, #d6dbbf 79%, #d6dbbf 89%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(11%,#feffe8), color-stop(26%,#feffe8), color-stop(26%,#feffe8), color-stop(79%,#d6dbbf), color-stop(79%,#d6dbbf), color-stop(89%,#d6dbbf)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #feffe8 11%,#feffe8 26%,#feffe8 26%,#d6dbbf 79%,#d6dbbf 79%,#d6dbbf 89%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #feffe8 11%,#feffe8 26%,#feffe8 26%,#d6dbbf 79%,#d6dbbf 79%,#d6dbbf 89%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #feffe8 11%,#feffe8 26%,#feffe8 26%,#d6dbbf 79%,#d6dbbf 79%,#d6dbbf 89%); /* IE10+ */
+	background: linear-gradient(to bottom, #feffe8 11%,#feffe8 26%,#feffe8 26%,#d6dbbf 79%,#d6dbbf 79%,#d6dbbf 89%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#d6dbbf',GradientType=0 ); /* IE6-9 */
+	opacity: 0.9;
+}
+.img-restaurant{
+	width: 100%;
+	
+}
+
+.heading-center{
+	text-align: center;
+}
+
+p{
+	font-size: 17px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+
+.main-content{
+	position: relative;
+	width: 100%;
+	height: 490px;
+	top: 50px;
+}
+
+.container-footer{
+
+	color: #FFFFFF;
+	background: #7d7e7d; /* Old browsers */
+	background: -moz-linear-gradient(top, #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #7d7e7d 0%,#0e0e0e 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+}
+
+.container-footer p{
+	text-align: center;
+}

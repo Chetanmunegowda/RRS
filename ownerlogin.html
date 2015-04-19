@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Reservation Form</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/loginstyle.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+					<a class="navbar-brand" href="#">Restaurant Reservation System</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+						<li><a href="customerreserve.html"><span class="glyphicon glyphicon-user"></span> Reserve</a></li>
+						<li><a href="ownerlogin.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<section>
+		<div class="container">
+			<h2>Owner</h2>
+			<ul class="nav nav-tabs">
+				<li><a data-toggle="tab" href="#login">Login Form</a></li>
+				<li><a data-toggle="tab" href="#searchreserve">View All Reservations</a></li>
+				<li><a data-toggle="tab" href="#assigntable">Assign Table</a></li>
+				<li><a data-toggle="tab" href="#restaurantprofile">Profile &amp; Settings</a></li>
+			</ul>
+			<div class="tab-content">
+				<div id="login" class="tab-pane fade  in active">
+					<h3>Login</h3>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="owneremail">Email:</label>
+							<div class="col-sm-10">          
+								<input type="email" class="form-control" id="owneremail" placeholder="Enter Email" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="ownerpassword">Password:</label>
+							<div class="col-sm-10">          
+								<input type="email" class="form-control" id="ownerpassword" placeholder="Enter Password" required>
+							</div>
+						</div>
+						<div class="form-group">        
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="button" class="btn btn-primary">Login</button>
+								<button type="reset" class="btn btn-primary">Reset</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div id="searchreserve" class="tab-pane fade">
+					<h3>Reservations List</h3>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Enter Reservation Number" id="inputSearch">
+						<div class="input-group-btn">
+							<button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+
+					<table class="table table-bordered table-align">
+						<thead>
+							<tr>
+								<th class="col-sm-1"></th>
+								<th class="col-sm-2">Reservation Number</th>
+								<th class="col-sm-2">Name</th>
+								<th class="col-sm-2">Phone Number</th>
+								<th class="col-sm-2">Date</th>
+								<th class="col-sm-2">Reservation Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="radio" name="reservenum"></td>
+								<td>R11101</td>
+								<td>Dipen Kumar</td>
+								<td>3124780873</td>
+								<td>4/18/2015 2pm</td>
+								<td>Confirmed</td>
+							</tr>
+							<tr>
+								<td><input type="radio" name="reservenum"></td>
+								<td>R11102</td>
+								<td>Pranjal Malav</td>
+								<td>3124780879</td>
+								<td>4/19/2015 4pm</td>
+								<td>Pending</td>
+							</tr>
+							<tr>
+								<td><input type="radio" name="reservenum"></td>
+								<td>R11103</td>
+								<td>Varun Srivats</td>
+								<td>3124780473</td>
+								<td>4/18/2015 2pm</td>
+								<td>Not Assigned</td>
+							</tr>
+							<tr>
+								<td><input type="radio" name="reservenum"></td>
+								<td>R11104</td>
+								<td>Praveen Salitha</td>
+								<td>3127890873</td>
+								<td>4/20/2015 12am</td>
+								<td>Not Assigned</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn-group">
+						<div class="col-sm-4">
+							<a class="btn btn-primary" data-toggle="tab" href="#assigntable">
+								Assign Table
+							</a>
+						</div>
+						<div class="col-sm-offset-2 col-sm-4">
+							<a class="btn btn-primary" data-toggle="tab" href="#deletereserve">Cancel
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="assigntable" class="tab-pane fade">
+					<h3>Assign Table</h3>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custreserve#">Reservation Number:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="custreserve#" value="R11101" readonly>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="reservestatus">Reservation Status:</label>
+							<div class="col-sm-10">
+								<div class="radio">
+							      <label><input type="radio" name="optradio">Confirmed</label>
+							      <label><input type="radio" name="optradio">Waiting</label>
+							      <label><input type="radio" name="optradio">Not Confirmed</label>
+							    </div>
+							</div>
+						</div>
+						<div class="form-group">
+					      <label class="control-label col-sm-2" for="sel1 ">Select Table Number:</label>
+					      <div class="col-sm-10">
+						      <select class="form-control" id="sel1">
+						        <option>Select</option>
+						        <option>1</option>
+						        <option>2</option>
+						        <option>3</option>
+						        <option>4</option>
+						        <option>5</option>
+						        <option>6</option>
+						        <option>7</option>
+						        <option>8</option>
+						        <option>9</option>
+						        <option>10</option>
+						        <option>11</option>
+						        <option>12</option>
+						      </select>
+						  </div>
+					    </div>
+						<div class="form-group">        
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal">Submit</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				
+				<div id="restaurantprofile" class="tab-pane fade collapse in">
+					<h3>Restaurant Profile and Settings</h3>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#viewProfile">View Profile &amp; Settings </a>
+            </h4>
+          </div>
+          <div id="viewProfile" class="panel-collapse collapse">
+            <div class="panel-body">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="resname">Restaurant Name:</label>
+                  <div class="col-sm-10">          
+                    <input type="text" class="form-control" id="resname" placeholder="Enter Restaurant Name" value="Chicago Family Restaurant" readonly>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="resno">Restaurant Contact:</label>
+                  <div class="col-sm-10">          
+                    <input type="text" class="form-control" id="resno" placeholder="Enter Contact Number" value="+1-(312)-567-9876" readonly>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="resemail">Restaurant Email Id:</label>
+                  <div class="col-sm-10">          
+                    <input type="email" class="form-control" id="resemail" placeholder="Enter Email Adddres" value="chicagorestaurant@gmail.com" readonly>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="resaddr">Restaurant Address:</label>
+                  <div class="col-sm-10">          
+                    <textarea class="form-control" rows="5" id="resaddr" readonly>3420 S.Cottage Grove Avenue, Chicago, Illinois - 60616</textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="resaddr">Auto Assign:</label>
+                  <div class="col-sm-10">          
+                    <div class="radio">
+                      <label><input type="radio" name="assignradio" value="Y" disabled>Yes</label>
+                      <label><input type="radio" name="assignradio" value="N" checked disabled>No</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="resaddr">Restaurant Open Days:</label>
+                  <div class="col-sm-10">          
+                    <label class="checkbox-inline">
+                      <input type="checkbox" value="monday" disabled="disabled" checked="checked">Monday
+                    </label>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" value="tuesday" disabled="disabled" checked="checked">Tuesday
+                    </label>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" value="wednesday" disabled="disabled" checked="checked">Wednesday
+                    </label>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" value="thrusday" disabled="disabled" checked="checked">Thrusday
+                    </label>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" value="friday" disabled="disabled" checked="checked">Friday
+                    </label>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" value="saturday" disabled="disabled" checked="checked">Saturday
+                    </label>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" value="sunday" disabled="disabled">Sunday
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#editProfile">Edit Profile &amp; Settings </a>
+          </h4>
+        </div>
+        <div id="editProfile" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="resname">Restaurant Name:</label>
+                <div class="col-sm-10">          
+                  <input type="text" class="form-control" id="resname" placeholder="Enter Restaurant Name" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="resno">Restaurant Contact:</label>
+                <div class="col-sm-10">          
+                  <input type="number" class="form-control" id="resno" placeholder="Enter Contact Number" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="resemail">Restaurant Email Id:</label>
+                <div class="col-sm-10">          
+                  <input type="email" class="form-control" id="resemail" placeholder="Enter Email Adddres" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="resaddr">Restaurant Address:</label>
+                <div class="col-sm-10">          
+                  <textarea class="form-control" rows="5" id="resaddr"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="resaddr">Auto Assign:</label>
+                <div class="col-sm-10">          
+                  <div class="radio">
+                    <label><input type="radio" name="assignradio">Yes</label>
+                    <label><input type="radio" name="assignradio">No</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="resaddr">Restaurant Open Days:</label>
+                <div class="col-sm-10">          
+                  <label class="checkbox-inline">
+                    <input type="checkbox" value="monday">Monday
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" value="tuesday">Tuesday
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" value="wednesday">Wednesday
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" value="thrusday">Thrusday
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" value="friday">Friday
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" value="saturday">Saturday
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" value="sunday">Sunday
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">        
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="button" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-primary">Reset</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

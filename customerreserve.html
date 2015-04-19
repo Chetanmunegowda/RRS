@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Reservation Form</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/reservestyle.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+					<a class="navbar-brand" href="#">Restaurant Reservation System</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+						<li><a href="customerreserve.html"><span class="glyphicon glyphicon-user"></span> Reserve</a></li>
+						<li><a href="ownerlogin.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<section>
+		<div class="container">
+			<h3 class="heading-center">Cutomer Reservation</h3>
+			<ul class="nav nav-tabs">
+				<li><a data-toggle="tab" href="#reserve">Reserve Form</a></li>
+				<li><a data-toggle="tab" href="#searchreserve">Search Reservation</a></li>
+				<li><a data-toggle="tab" href="#editreserve">Edit Reservation</a></li>
+				<li><a data-toggle="tab" href="#cancelreserve">Cancel Reservation</a></li>
+			</ul>
+			<div class="tab-content">
+				<div id="reserve" class="tab-pane fade  in active">
+					<h3>Reserve Form</h3>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custname">Name:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="custname" placeholder="Enter Name" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custemail">Email:</label>
+							<div class="col-sm-10">          
+								<input type="email" class="form-control" id="custemail" placeholder="Enter Email" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custphno">Phone Number:</label>
+							<div class="col-sm-10">          
+								<input type="tel" class="form-control" id="custphno" placeholder="Enter Phone Number" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="partysize">Party Size:</label>
+							<div class="col-sm-10"> 
+								<input type="number" class="form-control" id="partysize" placeholder="Enter Number of People" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="partydate">Party Date:</label>
+							<div class="col-sm-10">          
+								<input type="date" class="form-control" id="partydate" placeholder="Enter Party Date" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="partytime">Party Time:</label>
+							<div class="col-sm-10">          
+								<input type="time" class="form-control" id="partytime" placeholder="Enter party Time" required>
+							</div>
+						</div>
+						<div class="form-group">        
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Submit</button>
+							</div>
+						</div>
+					</form>
+
+					<!-- Modal -->
+					<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="createModalLabel">Reservation Status</h4>
+								</div>
+								<div class="modal-body">
+									Your reservation is made successfully. Your reservation number is RXXXXX, Please use this for your future reference.
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="searchreserve" class="tab-pane fade">
+					<h3>Reservations List</h3>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Enter Your Reservation Number" id="inputSearch">
+						<div class="input-group-btn">
+							<button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+
+					<table class="table table-bordered table-align">
+						<thead>
+							<tr>
+								<th class="col-sm-2">Reservation Number</th>
+								<th class="col-sm-2">Name</th>
+								<th class="col-sm-2">Phone Number</th>
+								<th class="col-sm-2">Number Of People</th>
+								<th class="col-sm-2">Date</th>
+								<th class="col-sm-2">Reservation Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>R11101</td>
+								<td>Dipen Kumar</td>
+								<td>3124780873</td>
+								<td>4</td>
+								<td>4/18/2015 2pm</td>
+								<td class="success">Confirmed</td>
+							</tr>
+							<tr>
+								<td>R11101</td>
+								<td>Dipen Kumar</td>
+								<td>3124780873</td>
+								<td>4</td>
+								<td>4/18/2015 2pm</td>
+								<td class="success">Confirmed</td>
+							</tr>
+							<tr>
+								<td>R11101</td>
+								<td>Dipen Kumar</td>
+								<td>3124780873</td>
+								<td>4</td>
+								<td>4/18/2015 2pm</td>
+								<td class="success">Confirmed</td>
+							</tr>
+							<tr>
+								<td>R11101</td>
+								<td>Dipen Kumar</td>
+								<td>3124780873</td>
+								<td>4</td>
+								<td>4/18/2015 2pm</td>
+								<td class="info">Pending</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn-group">
+						<div class="col-sm-4">
+							<a class="btn btn-primary" data-toggle="tab" href="#editreserve">
+								Edit
+							</a>
+						</div>
+						<div class="col-sm-offset-2 col-sm-4">
+							<a class="btn btn-primary" data-toggle="tab" href="#deletereserve">Cancel
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="editreserve" class="tab-pane fade">
+					<h3>Edit Reservation</h3>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custreserve#">Reservation Number:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="custreserve#" value="R11101" readonly>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custname">Name:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="custname" placeholder="Enter Name" value="Dipen Kumar">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custemail">Email:</label>
+							<div class="col-sm-10">          
+								<input type="email" class="form-control" id="custemail" placeholder="Enter Email" value="dipen@gmail.com">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custphno">Phone Number:</label>
+							<div class="col-sm-10">          
+								<input type="tel" class="form-control" id="custphno" placeholder="Enter Phone Number" value="3124780873">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="partysize">Party Size:</label>
+							<div class="col-sm-10"> 
+								<input type="number" class="form-control" id="partysize" placeholder="Enter Number of People" value="4">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="partydate">Party Date:</label>
+							<div class="col-sm-10">          
+								<input type="date" class="form-control" id="partydate" placeholder="Enter Party Date">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="partytime">Party Time:</label>
+							<div class="col-sm-10">          
+								<input type="time" class="form-control" id="partytime" placeholder="Enter party Time">
+							</div>
+						</div>
+						<div class="form-group">        
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#updateModal">Confirm Update</button>
+							</div>
+						</div>
+					</form>
+
+					<!-- Modal -->
+					<div class="modal fade" id="updateModal" role="dialog">
+						<div class="modal-dialog">
+
+							<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Modal Header</h4>
+								</div>
+								<div class="modal-body">
+									<p>Some text in the modal.</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<div id="cancelreserve" class="tab-pane fade">
+					<h3>Cancel Reservation</h3>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custreserve#">Reservation Number:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="custreserve#" value="R11101" readonly>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custname">Name:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="custname" placeholder="Enter Name" value="Dipen Kumar">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custemail">Email:</label>
+							<div class="col-sm-10">          
+								<input type="email" class="form-control" id="custemail" placeholder="Enter Email" value="dipen@gmail.com">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="custphno">Phone Number:</label>
+							<div class="col-sm-10">          
+								<input type="tel" class="form-control" id="custphno" placeholder="Enter Phone Number" value="3124780873">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="partysize">Party Size:</label>
+							<div class="col-sm-10"> 
+								<input type="number" class="form-control" id="partysize" placeholder="Enter Number of People" value="4">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="partydate">Party Date:</label>
+							<div class="col-sm-10">          
+								<input type="date" class="form-control" id="partydate" placeholder="Enter Party Date">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="partytime">Party Time:</label>
+							<div class="col-sm-10">          
+								<input type="time" class="form-control" id="partytime" placeholder="Enter party Time">
+							</div>
+						</div>
+						<div class="form-group">        
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal">Confirm Cancel</button>
+							</div>
+						</div>
+					</form>
+					<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="deleteModalLabel">Reservation Status</h4>
+								</div>
+								<div class="modal-body">
+									Your reservation number RXXXXX is cancelled successfully.
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
