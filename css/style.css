@@ -9,6 +9,7 @@ body{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#d6dbbf',GradientType=0 ); /* IE6-9 */
 	opacity: 0.9;
 }
+
 .img-restaurant{
 	width: 100%;
 	
@@ -16,20 +17,63 @@ body{
 
 .heading-center{
 	text-align: center;
+	-webkit-transition: color 3s; /* Safari */
+    -webkit-transition-delay: 1s; /* Safari */
+    transition: color 3s;
+    transition-delay: 1s;
+    animation: animateheading 5s linear 2s infinite alternate;
+    -webkit-animation: animateheading 5s linear 2s infinite alternate; /* Chrome, Safari, Opera */
+}
+
+@-webkit-keyframes animateheading {
+    0%   {
+    	color:red;
+    	-ms-transform: rotate(-2deg); /* IE 9 */
+   		-webkit-transform: rotate(-2deg); /* Safari */
+    	transform: rotate(-2deg);
+    }
+    25%  {
+    	color:yellow;
+    	-ms-transform: rotate(2deg); /* IE 9 */
+   		-webkit-transform: rotate(2deg); /* Safari */
+    	transform: rotate(2deg);
+    }
+    50%  {
+    	color:blue;
+    	-ms-transform: rotate(-2deg); /* IE 9 */
+   		-webkit-transform: rotate(-2deg); /* Safari */
+    	transform: rotate(-2deg);
+   
+    }
+    75%  {
+    	color:green;
+    	-ms-transform: rotate(2deg); /* IE 9 */
+   		-webkit-transform: rotate(2deg); /* Safari */
+    	transform: rotate(2deg);
+    }
+    100% {
+    	color:red;
+    	-ms-transform: rotate(-2deg); /* IE 9 */
+   		-webkit-transform: rotate(-2deg); /* Safari */
+    	transform: rotate(-2deg);  
+    }
+}
+
+
+.heading-center:hover{
+	color: rgb(160,0,0);
+	opacity: 0.7;
+	cursor: pointer;
 }
 
 p{
 	font-size: 17px;
 	font-family: 'Ubuntu', sans-serif;
+	
 }
 
 
-.main-content{
-	position: relative;
-	width: 100%;
-	height: 490px;
-	top: 50px;
-}
+
 
 .container-footer{
 
@@ -46,4 +90,36 @@ p{
 
 .container-footer p{
 	text-align: center;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 300px) and (max-width: 500px) {
+	.main-content{
+	position: relative;
+	width: 100%;
+	height: 700px;
+	top: 50px;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 501px) and (max-width: 992px) { 
+	.main-content{
+	position: relative;
+	width: 100%;
+	height: 650px;
+	top: 50px;
+
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 993px) and (max-width: 1800px){ 
+	.main-content{
+	position: relative;
+	width: 100%;
+	height: 490px;
+	top: 50px;
+	}
 }

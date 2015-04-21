@@ -16,3 +16,13 @@ body{
 .table-align{
 	margin-top: 5%;
 }
+
+.heading-style,.modal-title{
+	text-align: center;
+	color: blue;
+}
+
+#detailsModal{
+	font-size: 17px;
+	font-family: 'Ubuntu', sans-serif;
+}
